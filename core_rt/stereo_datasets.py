@@ -299,7 +299,7 @@ class KITTI(StereoDataset):
 
 class VKITTI2(StereoDataset):
     def __init__(self, aug_params=None, root='/data/StereoDatasets/vkitti2'):
-        super(VKITTI2, self).__init__(aug_params, sparse=True, reader=frame_utils.readDispVKITTI2)
+        super(VKITTI2, self).__init__(aug_params, reader=frame_utils.readDispVKITTI2)
         assert os.path.exists(root)
 
         image1_list = sorted(glob(os.path.join(root, 'Scene*/*/frames/rgb/Camera_0/rgb*.jpg')))
